@@ -86,7 +86,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 #accessForm button { width: 100%; margin-top: 5px; }
 #result { min-height: 18px; margin: 12px 0 0; text-align: center; font-size: 13px; }
 
-/* Signal terminal: fluid desktop width, panels remain vertically stacked. */
+/* Signal terminal: vertical on phones and narrow windows; two columns on wide desktops. */
 .signals-page { padding: 28px 18px 70px; }
 .signals-page #site-container {
   width: min(100%, 82vw, 980px); min-height: auto; height: auto;
@@ -274,10 +274,30 @@ body.signals-page:has(#theme-switch:checked) {
   #logo-container { left: 18px; }
 }
 
-/* Comfortable desktop rhythm on large monitors; no fixed-height overflow. */
-@media (min-width: 1100px) {
-  #button-wrapper { gap: clamp(16px, 1.7vw, 22px); }
+/* Wide window: two independent panels side by side, rather than stretching one column.
+   980px threshold leaves enough room for both controls and the gauge. */
+@media (min-width: 980px) {
+  .signals-page #site-container {
+    width: min(100%, 1120px);
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-rows: auto;
+    align-items: stretch !important;
+    gap: clamp(18px, 2.2vw, 28px);
+    padding-top: 124px;
+  }
+  #button-wrapper, #win-rate-container { min-width: 0; height: 100%; }
+  #button-wrapper { justify-content: center; gap: clamp(16px, 1.7vw, 22px); }
+  #win-rate-container { display: flex; flex-direction: column; }
+  #circle-wrapper { flex: 1; min-height: 0; justify-content: center; }
   #progress-wrapper { margin-top: 24px !important; margin-bottom: 16px !important; }
+  #logo-container { left: max(18px, calc((100vw - 1120px) / 2 + 18px)); }
+}
+
+/* Intermediate windows retain the mobile-style vertical ordering and readable panel width. */
+@media (min-width: 601px) and (max-width: 979px) {
+  .signals-page #site-container { width: min(100%, 680px); }
+  #logo-container { left: max(18px, calc((100vw - 680px) / 2)); }
 }
 
 @media (max-width: 600px) {
