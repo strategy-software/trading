@@ -102,15 +102,20 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
   z-index: 3; width: auto; height: 55px; transform: none;
   display: flex; align-items: center; gap: 11px;
 }
-#logo { display: none; }
+
+#logo {
+    display: block;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
 #logo-container::before {
-  content: '▥'; display: grid; place-items: center;
-  width: 44px; height: 44px; border: 1px solid #2b7280; border-radius: 12px;
-  color: #44e1d0; background: rgba(38,181,181,.11);
-  font: 700 33px/1 'Space Grotesk',sans-serif; transform: rotate(-10deg);
+    content: none;
+    display: none;
 }
 #logo-container::after {
-  content: 'TRADEBOT\A TERMINAL'; white-space: pre;
+  content: 'GPT-6 / TRADING'; white-space: pre;
   font: 700 17px/1.05 'Space Grotesk',sans-serif;
   letter-spacing: .09em; color: var(--heading);
 }
@@ -135,7 +140,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 }
 #button-wrapper::before { content: '01 / SIGNAL PARAMETERS'; margin-bottom: 2px; }
 #button-wrapper::after {
-  content: 'Выберите актив и время экспирации'; display: block;
+  content: 'Selecione o ativo e o tempo de expiração'; display: block;
   margin-top: 0; text-align: center; color: var(--muted);
   font-size: 13px; line-height: 1.5;
 }
@@ -165,7 +170,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 }
 #circle-wrapper::before { content: '02 / SIGNAL OUTPUT'; align-self: flex-start; }
 #circle-wrapper::after {
-  content: 'Визуализация результата';
+  content: 'Confira a previsão e a probabilidade estimada de acerto da operação';
   align-self: flex-start; margin-top: 5px;
   color: var(--muted); font-size: 14px;
 }
@@ -197,11 +202,11 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
   font: 700 20px/1.2 'Space Grotesk',sans-serif;
   text-align: center;
 }
-#signal-output[data-direction='Вверх'] {
+#signal-output[data-direction='PARA CIMA'] {
   background: rgba(23,147,111,.25); color: #d3ffef;
   border-color: rgba(62,223,170,.48);
 }
-#signal-output[data-direction='Вниз'] {
+#signal-output[data-direction='PARA BAIXO'] {
   background: rgba(180,54,83,.25); color: #ffdde5;
   border-color: rgba(255,102,131,.45);
 }
@@ -260,8 +265,8 @@ body.signals-page:has(#theme-switch:checked) {
 .signals-page:has(#theme-switch:checked) #currency-pair,
 .signals-page:has(#theme-switch:checked) #expiration-time { color: var(--text) !important; background-color: var(--field) !important; }
 .signals-page:has(#theme-switch:checked) #progress-container .progressbar-text { color: #132742 !important; }
-.signals-page:has(#theme-switch:checked) #signal-output[data-direction='Вверх'] { color: #126d53; background: #d4f3e6; }
-.signals-page:has(#theme-switch:checked) #signal-output[data-direction='Вниз'] { color: #a32d4d; background: #ffe1e8; }
+.signals-page:has(#theme-switch:checked) #signal-output[data-direction='PARA CIMA'] { color: #126d53; background: #d4f3e6; }
+.signals-page:has(#theme-switch:checked) #signal-output[data-direction='PARA BAIXO'] { color: #a32d4d; background: #ffe1e8; }
 .signals-page:has(#theme-switch:checked) #generate-signal:disabled { background: #cedbe7 !important; color: #50677c !important; }
 .signals-page:has(#theme-switch:checked) #theme-toggle .slider { background: #d2e2f1 !important; border-color: #b9cede !important; box-shadow: inset 0 0 8px rgba(69,120,160,.08); }
 .signals-page:has(#theme-switch:checked) #theme-toggle .slider::before { left: 4px !important; background: linear-gradient(145deg,#fff,#b9d6ef) !important; box-shadow: 0 2px 7px rgba(71,116,151,.18) !important; }
