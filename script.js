@@ -30,7 +30,7 @@ function checkAccess() {
     if (accessGranted) {
         window.location.href = "signals.html"; // Перенаправление на страницу загрузки
     } else {
-        result.textContent = "Пользователь не найден, повторите попытку.";
+        result.textContent = "ID ou chave de acesso inválidos. Tente novamente.";
         result.style.color = "red";
     }
 }
