@@ -90,7 +90,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .signals-page { padding: 28px 18px 70px; }
 .signals-page #site-container {
   width: min(100%, 82vw, 980px); min-height: auto; height: auto;
-  margin: 0 auto; padding: clamp(85px, 8vw, 105px) 0 0;
+  margin: 0 auto; padding: clamp(85px, 8vw, 85px) 0 0;
   display: flex !important; flex-direction: column !important;
   align-items: stretch !important; justify-content: flex-start;
   gap: clamp(16px, 2.1vw, 26px);
