@@ -328,3 +328,40 @@ body.signals-page:has(#theme-switch:checked) {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Direction arrows */
+
+#signal-output[data-direction] {
+    gap: 12px;
+    font-weight: 800;
+}
+
+#signal-output[data-direction]::before,
+#signal-output[data-direction]::after {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+#signal-output[data-direction='PARA CIMA']::before,
+#signal-output[data-direction='PARA CIMA']::after {
+    content: '↑';
+}
+
+#signal-output[data-direction='PARA BAIXO']::before,
+#signal-output[data-direction='PARA BAIXO']::after {
+    content: '↓';
+}
+
+@media (max-width: 380px) {
+    #signal-output[data-direction] {
+        gap: 8px;
+        font-size: 17px;
+    }
+
+    #signal-output[data-direction]::before,
+    #signal-output[data-direction]::after {
+        font-size: 23px;
+    }
+}
