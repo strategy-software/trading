@@ -168,7 +168,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 #progress-wrapper {
   display: flex !important; position: relative; flex: 0 0 auto;
   width: 215px; height: 215px;
-  margin: 18px auto 10px !important;
+  margin: 15px auto !important;
   align-items: center !important; justify-content: center !important;
 }
 #progress-container {
@@ -303,7 +303,7 @@ body.signals-page:has(#theme-switch:checked) {
   #button-wrapper, #circle-wrapper { padding: 24px 22px; border-radius: 22px; }
   #currency-pair, #expiration-time { height: 57px; font-size: 16px; }
   #generate-signal { height: 58px; }
-  #progress-wrapper { margin-top: 14px !important; }
+  #progress-wrapper { margin-top: 20px auto !important; }
   .index-page #site-container { padding-inline: 23px; }
 }
 @media (max-width: 355px) {
