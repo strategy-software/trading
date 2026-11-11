@@ -365,3 +365,84 @@ body.signals-page:has(#theme-switch:checked) {
         font-size: 23px;
     }
 }
+
+/* Logo and title alignment */
+#logo-container {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#logo {
+    display: block;
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+#logo-container::after {
+    display: block;
+    align-self: center;
+    line-height: 1.15;
+}
+
+/* 2. Smaller theme toggle */
+#theme-toggle {
+    top: 10px !important;
+    z-index: 10 !important;
+}
+
+#theme-toggle .switch {
+    width: 62px !important;
+    height: 32px !important;
+}
+
+#theme-toggle .slider {
+    border-radius: 999px !important;
+}
+
+#theme-toggle .slider::before {
+    width: 24px !important;
+    height: 24px !important;
+    left: 33px !important;
+    bottom: 3px !important;
+    transform: none !important;
+}
+
+/* Light mode toggle position */
+.signals-page:has(#theme-switch:checked)
+#theme-toggle .slider::before {
+    left: 4px !important;
+}
+
+/* 3. Center description below signal heading */
+#circle-wrapper::after {
+    align-self: center;
+    width: 100%;
+    margin-top: 8px;
+    padding: 0 8px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+/* 4. Mobile adjustments */
+@media (max-width: 600px) {
+    #logo-container {
+        height: 56px;
+        gap: 9px;
+    }
+
+    #logo {
+        width: 54px;
+        height: 54px;
+    }
+
+    #theme-toggle {
+        top: 10px !important;
+        right: 3px !important;
+    }
+}
