@@ -64,7 +64,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 #index-logo { display: block; width: 100%; height: 100%; object-fit: contain; }
 .index-page h1 { margin: 0; text-align: center; font: 700 32px/1.25 'Space Grotesk',sans-serif; color: var(--heading); }
 .index-page h1::after {
-  content: 'Войдите, чтобы продолжить работу с терминалом'; display: block;
+  content: 'Faça login na sua conta para continuar'; display: block;
   margin: 10px auto 24px; max-width: 300px; font: 400 13px/1.5 'DM Sans',sans-serif;
   color: var(--muted);
 }
