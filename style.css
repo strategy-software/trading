@@ -56,7 +56,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
   border: 1px solid var(--panel-border); border-radius: 26px; box-shadow: var(--panel-shadow);
 }
 .index-page #site-container::before {
-  content: 'TRADEBOT  /  ACCESS PORTAL';
+  content: 'GPT6-Trading  /  ACCESS PORTAL';
   position: absolute; top: 19px; left: 28px;
   font: 700 10px 'Space Grotesk',sans-serif; letter-spacing: .15em; color: var(--muted);
 }
