@@ -175,7 +175,7 @@
             circle.path.setAttribute('stroke', state.color);
 			circle.path.style.filter = `drop-shadow(0px 0px 0px ${state.color})`;
             const value = Math.round(circle.value() * 100);
-            circle.setText(`<div>Success Rate</div><div>${value}%</div>`);
+            circle.setText(`<div>Taxa de acerto</div><div>${value}%</div>`);
             },
         });
 			
@@ -219,7 +219,7 @@
 
         function updateButtonText(timeRemaining) {
             const button = document.getElementById('generate-signal');
-            button.textContent = `Обновление через ${timeRemaining} секунд`;
+            button.textContent = `Atualização em ${timeRemaining} s`;
         }
 
 function resetTimerAndOutput() {
