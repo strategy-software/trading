@@ -90,7 +90,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 .signals-page { padding: 28px 18px 70px; }
 .signals-page #site-container {
   width: min(100%, 82vw, 980px); min-height: auto; height: auto;
-  margin: 0 auto; padding: clamp(100px, 9vw, 124px) 0 0;
+  margin: 0 auto; padding: clamp(85px, 8vw, 105px) 0 0;
   display: flex !important; flex-direction: column !important;
   align-items: stretch !important; justify-content: flex-start;
   gap: clamp(16px, 2.1vw, 26px);
@@ -128,10 +128,6 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
   background: linear-gradient(155deg,var(--panel),var(--panel-bottom)) !important;
 }
 #button-wrapper { gap: 16px; align-items: stretch; }
-#button-wrapper::before, #circle-wrapper::before {
-  font: 700 13px/1.35 'Space Grotesk',sans-serif;
-  letter-spacing: .14em; color: var(--accent);
-}
 
 #button-wrapper::after {
   content: 'Selecione o ativo e o tempo de expiração'; display: block;
@@ -160,7 +156,7 @@ button:focus-visible, select:focus-visible, input:focus-visible { outline: 2px s
 #win-rate-text { display: none; }
 #circle-wrapper {
   align-items: center !important; justify-content: flex-start;
-  gap: 0; min-height: 0; padding-top: 30px;
+  gap: 0; min-height: 0; padding-top: 24px;
 }
 
 #circle-wrapper::after {
@@ -283,7 +279,7 @@ body.signals-page:has(#theme-switch:checked) {
     grid-template-rows: auto;
     align-items: stretch !important;
     gap: clamp(18px, 2.2vw, 28px);
-    padding-top: 124px;
+    padding-top: 105px;
   }
   #button-wrapper, #win-rate-container { min-width: 0; height: 100%; }
   #button-wrapper { justify-content: center; gap: clamp(16px, 1.7vw, 22px); }
@@ -301,12 +297,10 @@ body.signals-page:has(#theme-switch:checked) {
 
 @media (max-width: 600px) {
   .signals-page { padding: 18px 14px 50px; }
-  .signals-page #site-container { padding-top: 105px; gap: 16px; }
+  .signals-page #site-container { padding-top: 90px; gap: 16px; }
   #logo-container { top: 16px; left: 16px; }
-  .signals-page #site-container::before { top: 76px; font-size: 9px; letter-spacing: .09em; }
   #theme-toggle { top: 19px !important; right: 3px !important; }
   #button-wrapper, #circle-wrapper { padding: 24px 22px; border-radius: 22px; }
-  #button-wrapper::before, #circle-wrapper::before { font-size: 11px; letter-spacing: .13em; }
   #currency-pair, #expiration-time { height: 57px; font-size: 16px; }
   #generate-signal { height: 58px; }
   #progress-wrapper { margin-top: 14px !important; }
